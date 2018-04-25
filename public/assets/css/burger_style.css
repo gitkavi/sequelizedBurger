@@ -1,0 +1,22 @@
+body{
+    background-color:#FFA500;
+}
+.jumbotron{
+    background-color:#ed7800;
+    color:#59291c;
+}
+
+img{
+    height:175px;
+    width: 175px;
+}
+
+.burger_list{
+    border-style: solid;
+    border-width: 1px;
+}
+
+.devour-it{
+    background-color: brown;
+    color:white;
+}
