@@ -20,3 +20,7 @@ img{
     background-color: brown;
     color:white;
 }
+
+#burgerName{
+    width:200px;
+}

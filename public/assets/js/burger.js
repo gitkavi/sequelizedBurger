@@ -22,13 +22,14 @@ $(function () {
         console.log("inside Devour-it click");
 
         var id = $(this).data("id");
-        var devoured = {devoured: 1};
-
+        var customer_name = $("#customer_name").val().trim();
+        var newDevoured = {devoured: 1,name: customer_name};
+        console.log(customer_name);
         $.ajax("api/burgers/" +id, {
             type:"PUT",
-            data: devoured
+            data: newDevoured
         }).then(function(){
-            console.log("changed devoured to: ", devoured.devoured);
+            console.log("changed devoured to: ", newDevoured.devoured);
             location.reload();
         });
     });
