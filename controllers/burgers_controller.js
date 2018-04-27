@@ -33,6 +33,7 @@ module.exports = function (app) {
             db.Burger.update({
                 devoured: req.body.devoured,
                 CustomerId: id,
+                include:[db.Customer]
             },
                 {                    
                     where: {
@@ -43,16 +44,18 @@ module.exports = function (app) {
                         include:[db.Customer]
                     }).then(function(result){
                         res.json(result);
-                    });                    
+                    }); 
                 });
         });
     });
 
     app.get("/api/devBurgers/", function(req, res){
+
         db.Burger.findAll({
-            include:[db.Customer],
+            include:[db.Customer]
         }).then(function(result){
+
             res.json(result);
-        });
-    })
+        }); 
+    });
 };

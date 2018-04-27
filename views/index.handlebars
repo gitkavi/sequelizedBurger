@@ -24,7 +24,7 @@
         <h3>Devoured Burger List</h3>
         {{#each burgers}} 
             {{#if this.devoured}} 
-                <p class="devoured_list">{{this.id}}. {{this.burger_name}} (Eaten By {{this.CustomerId}})</p>
+                <p class="devoured_list">{{this.id}}. {{this.burger_name}} (Eaten By {{this.Customer.name}})</p>
             {{/if}} 
         {{/each}}
     </div>
