@@ -4,7 +4,9 @@ module.exports = function (app) {
 
     app.get("/", function (req, res) {
         // console.log(db.Burger);
-        db.Burger.findAll({}).then(function (result) {
+        db.Burger.findAll({
+            include:[db.Customer]
+        }).then(function (result) {
             var dataObj = { burgers: result };
             res.render("index", dataObj);
         });
@@ -40,11 +42,7 @@ module.exports = function (app) {
                         id: req.params.id
                     },                    
                 }).then(function (result) {
-                    db.Burger.findAll({
-                        include:[db.Customer]
-                    }).then(function(result){
-                        res.json(result);
-                    }); 
+                    res,json(result);
                 });
         });
     });
